@@ -38,3 +38,12 @@ let checkOrder = () => {
         nextLevel();
     }
 }
+let click = (color) => {
+    clickedOrder[clickedOrder.length] = color;
+    createColorElement(color).classList.add('selected');
+
+    setTimeout(() => {
+        createColorElement(color).classList.remove('selected');
+        checkOrder();
+    },250);
+}
